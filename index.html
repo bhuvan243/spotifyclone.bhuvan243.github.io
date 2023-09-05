@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="icon" href="./Test folder/Icons and logo/spotify_icon.png">
+    <link rel="stylesheet" href="./home-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- sidebar -->
+    <header class="d-flex flex-column">
+        <!-- top section - logo, home, search, Your library -->
+        <!-- should have postition:fixed; z-index: high too -->
+        <div class="spotify-logo-div py-3">
+            <img class="spotify-logo" src="./Test folder/Icons and logo/Spotify logo.svg" alt="spotify-logo">
+        </div>
+        <section class="sidebar">
+            <div class="sidebar-header my-2">
+                <div id="home-icon" class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons"
+                            src="./Test folder/Icons and logo/Sidebar/home.svg" alt="Home icon"></div>
+                    <span>Home</span>
+                </div>
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons"
+                            src="./Test folder/Icons and logo/Sidebar/search.svg" alt="Search icon"></div>
+                    <span>Search</span>
+                </div>
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons"
+                            src="./Test folder/Icons and logo/Sidebar/your_library.svg" alt="Library icon"></div>
+                    <span><a href="./playlist.html">Your Library</a></span>
+                </div>
+            </div>
+
+            <!-- contains - create playlist, liked songs, your episodes-->
+            <div class="sidebar-sub-header my-3">
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2">
+                        <div class="d-inline-block">
+                            <div id="plus-icon"><img class="sidebar-icons"
+                                    src="./Test folder/Icons and logo/Sidebar/create_playlist.svg"
+                                    alt="Single plus icon"></div>
+                        </div>
+                    </div>
+                    <span>Create Playlist</span>
+                </div>
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons"
+                            src="./Test folder/Icons and logo/Sidebar/liked_songs.svg" alt="Purple heart icon"></div>
+                    <span>Liked Songs</span>
+                </div>
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons"
+                            src="./Test folder/Icons and logo/Sidebar/your_episodes.svg" alt="Podcast icon"></div>
+                    <span>Your Episodes</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contains the list of Playlist Artists -->
+        <section class="abcd">
+            <div class="sidebar-playlist px-3">
+                <div><a href="#">FAV</a></div>
+                <div><a href="#">Daily Mix 1</a></div>
+                <div><a href="#">Discover Weekly</a></div>
+                <div><a href="#">Malayalam</a></div>
+                <div><a href="#">Dance/Electronic Mix</a></div>
+                <div><a href="#">EDM/Popular</a></div>
+            </div>
+        </section>
+        <!-- Install app at the bottom -->
+        <section class="install-app-div">
+            <div class="py-1">
+                <div class="install-app-hover sidebar-tags px-3 py-2">
+                    <img class="sidebar-icons" src="./Test folder/Icons and logo/Sidebar/install_app.svg"
+                        alt="Download Icon">
+                    <span class="ps-3">Install App</span>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <!-- Main body - contains the whole playlist cards -->
+    <main>
+        <!-- Nav bar -->
+        <nav id="navbar-top-fixed" class="my-navbar d-flex justify-content-between align-items-center px-4">
+            <div class="navbar-arrow-section d-flex">
+                <div class="navbar-arrow d-flex justify-content-center align-items-center"><img
+                        src="./Test folder/Icons and logo/Main/left_arrow.svg" title="Go Back"/></div>
+                <div class="navbar-arrow d-flex justify-content-center align-items-center"><img
+                        src="./Test folder/Icons and logo/Main/right_arrow.svg" title="Go Forward"/></div>
+            </div>
+            <div class="profile d-flex justify-content-center align-items-center">
+                <img class="profile-pic " src="./Test folder/Images/Gaara Monster.jpg" alt="Profile photo">
+                <span class="px-2">Bhuvaneshwaran</span>
+                <img class="px-2" src="./Test folder/Icons and logo/Main/carret_down.svg" alt="carret_down">
+            </div>
+        </nav>
+        <!-- Top icons for mobile view -->
+        <div id="mobile-nav">
+            <div class="mob-nav d-flex justify-content-between align-items-center">
+                <i class="fa-regular fa-bell fa-2xl" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-clock-rotate-left fa-2xl" style="color: #ffffff;"></i>
+                <i class="fa-solid fa-gear fa-2xl" style="color: #ffffff;"></i>
+            </div>
+        </div>
+        <!-- Good morning section -->
+        <section>
+            <br><br>
+            <div class="main-header">
+                <h2>Good Morning</h2>
+            </div>
+            <div class="px-3 row row-cols-lg-4 row-cols-sm-6 row-cols-xs-12">
+                <div class="gm-suggestion col">
+                    <img src="./Test folder/Icons and logo/Sidebar/liked_songs.svg" alt="Liked Songs">
+                    <div class="d-inline px-3">Liked Songs</div>
+                </div>
+                <div class="gm-suggestion col">
+                    <img src="./Test folder/Icons and logo/Main/neffex_playlist.svg" alt="Neffex Playlist">
+                    <div class="d-inline px-3">Neffex Playlist</div>
+                </div>
+                <div class="gm-suggestion col">
+                    <img src="./Test folder/Icons and logo/Main/k_da.svg" alt="K/DA Playlist">
+                    <div class="d-inline px-3">K/ DA</div>
+                </div>
+                <div class="gm-suggestion col">
+                    <img src="./Test folder/Icons and logo/Main/dance.svg" alt="Dance/Electronic Playlist">
+                    <div class="d-inline px-3">Dance/ Electronic Mix</div>
+                </div>
+            </div>
+
+            <!-- Shows you might like -->
+            <div>
+                <div class="main-header">
+                    <h3>Shows you might like</h3>
+                </div>
+                <div id="album-list">
+                    <div id="my-list" class="my-playlist d-flex flex-wrap">
+                        <!-- Card 1 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000027ce182976025f9b0eb5ec2d5" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Latest Dance Tamil</div>
+                            <div class="playlist-description">
+                                Dance Machi Dance Cover : Leo
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002e3bebb64cae8c21213744544" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Kollywood Cream</div>
+                            <div class="playlist-description">
+                                Finest collection of Tamil Music from the past 10 years Cover : LEO
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002588667e57a994ad916a0d366" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Trending Now Tamil</div>
+                            <div class="playlist-description">
+                                Top Trending Tamil Songs on Social Media Cover : Jailer
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 4-->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002dac6b6b1722528ee7fc14424" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Hot Hits Tamil</div>
+                            <div class="playlist-description">
+                                Tune into the Hottest tracks of Kollywood! Cover : Jailer
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002611ccb1a5de83b0218745279" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Kollywood Workout</div>
+                            <div class="playlist-description">
+                                Check out our Kollywood Machos! Cover : Suriya
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002a3b940c6efe699f5e2f007df" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Thadai Adhai Udai</div>
+                            <div class="playlist-description">
+                                Believe in yourself Cover : AjithKumar
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000028fa6a76a386096f04412bc29" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Mass Intros</div>
+                            <div class="playlist-description">
+                                Pakka Intros of our Kolly Heroes! Cover : Vikram
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 8 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000029ba8b409420f4d46e9b786a5" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Kollywood Rap</div>
+                            <div class="playlist-description">
+                                The essence of Tamil Rap from Kollywood Cover : Yuvan Shankar Raja
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- India's Best -->
+            <div>
+                <div class="main-header">
+                    <h3>India's Best</h3>
+                </div>
+                <div id="album-list">
+                    <div id="my-list" class="my-playlist d-flex flex-wrap">
+                        <!-- Card 1 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000029a00f733cb3ca6a0af12db40" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">RADAR India</div>
+                            <div class="playlist-description">
+                                Most exciting artists from the Indian Indie scene. Cover : Prateeksha Srivastava
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002bb356f4951404ce7362ab02c" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Bollywood Butter</div>
+                            <div class="playlist-description">
+                                B bole toh biggest blockbusters, right here! Koi Shaq? 😎 Cover - Rocky Aur Rani Kii Prem Kahaani
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000029ad975001ed3742ece3017c1" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">ECHO : Soulful Sitar</div>
+                            <div class="playlist-description">
+                                Intertwine with the soul stirring strings of the Sitar, from Indian maestros & modern geniuses. Cover : Rishab Rikhiram Sharma
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 4-->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f0000000221bc94b12d8a6f918667e641" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Punjabi 101</div>
+                            <div class="playlist-description">
+                                Ultimate 101 Punjabi Hits with AP Dhillon
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000023de2699474ae904d48dcd269" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Indie India </div>
+                            <div class="playlist-description">
+                                Best of the Indian Indie scene. Cover - Taaruk Raina
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000028026f23779556a8d59843677" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">EQUAL India</div>
+                            <div class="playlist-description">
+                                Listen to Indian women, at full volume. Cover - Sunanda Sharma
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f0000000242404eeecdf6f48142ec5e9b" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">RAP 91</div>
+                            <div class="playlist-description">
+                                Best of Hip-Hop from India. Cover- MC Square
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 8 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002db9d81d8593b000f90f8c728" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Mollywood Gold</div>
+                            <div class="playlist-description">
+                                Your ultimate playlist for the best in Mollywood! Cover: Thallumala
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Best of Artists -->
+            <div>
+                <div class="main-header">
+                    <h3>Best of artists</h3>
+                </div>
+                <div id="album-list">
+                    <div id="my-list" class="my-playlist d-flex flex-wrap">
+                        <!-- Card 1 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO1wQgz6-default.jpg" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">This Is Dhanush</div>
+                            <div class="playlist-description">
+                                This is Dhanush. The essential tracks, all in one playlist.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO4ovoG0-default.jpg" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">This Is Sid Sriram</div>
+                            <div class="playlist-description">
+                                This is Sid Sriram. The essential tracks, all in one playlist.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0KEAbC-default.jpg" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">This Is A.R. Rahman</div>
+                            <div class="playlist-description">
+                                This is A.R. Rahman. The essential tracks, all in one playlist.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 4-->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO2GbnbB-default.jpg" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">This Is Anirudh Ravichander</div>
+                            <div class="playlist-description">
+                                This is Anirudh Ravichander. The essential tracks, all in one playlist.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3uUCuI-default.jpg" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">This Is G. V. Prakash</div>
+                            <div class="playlist-description">
+                                This is G. V. Prakash. The essential tracks, all in one playlist.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0arULD-default.jpg" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">This Is Shreya Ghoshal</div>
+                            <div class="playlist-description">
+                                This is Shreya Ghoshal. The essential tracks, all in one playlist.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO3TcHDq-default.jpg" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">This Is Yuvan Shankar Raja</div>
+                            <div class="playlist-description">
+                                This is Yuvan Shankar Raja. The essential tracks, all in one playlist.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 8 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO491yeR-default.jpg" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">This Is Udit Narayan</div>
+                            <div class="playlist-description">
+                                This is Udit Narayan. The essential tracks, all in one playlist.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fresh new music -->
+            <div>
+                <div class="main-header">
+                    <h3>Fresh new music</h3>
+                </div>
+                <div id="album-list">
+                    <div id="my-list" class="my-playlist d-flex flex-wrap">
+                        <!-- Card 1 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000025f39096d6d1e374143b5b2fd" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Latest Tamil</div>
+                            <div class="playlist-description">
+                                New Music from Kollywood. Cover : Jailer
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000021de87fc0bb227e5633446cd5" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">New in Dance</div>
+                            <div class="playlist-description">
+                                Latest floor fillers to kickstart your party. Cover - Yaariyan 2
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002858d2092e742e4b3bdb55fc8" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">New Music Hindi</div>
+                            <div class="playlist-description">
+                                Yes! It's 'Not Ramaiya Vastavaiya' from Jawan! Listen now.
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 4-->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000025d2039d64e5e31c583a5a3a6" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Latest Telugu</div>
+                            <div class="playlist-description">
+                                New Music from Tollywood! Cover: Gangs Of Godavari
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002696376b4c9450acbf0e90204" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Latest Malayalam</div>
+                            <div class="playlist-description">
+                                Catch the latest songs from Malayalam ! Cover : RDX
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002e60555bac35a2eae855bd95b" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Latest Kannada</div>
+                            <div class="playlist-description">
+                                Check out the latest hits from Sandalwood! Cover : Sapta Sagaradaache Ello - Side A
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f00000002678b81229c4b783dd816d87a" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">Anime Now</div>
+                            <div class="playlist-description">
+                                Best new Anime tracks for all Anime fans! 最新アニメシーンの話題曲をまとめてお届け！Illustration by 
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                        <!-- Card 8 -->
+                        <div class="card my-card">
+                            <img class="my-card-img" aria-hidden="false" draggable="false" loading="eager" src="https://i.scdn.co/image/ab67706f000000021f78bae21d619781e204d0e1" alt="" class="mMx2LUixlnN_Fu45JpFB Yn2Ei5QZn19gria6LjZj">
+                            <div class="mt-2 py-2 playlist-name">New Music Friday India</div>
+                            <div class="playlist-description">
+                                The best new songs of the week featuring Diljit Dosanjh, Camilo, Doja Cat, Nicki Minaj and more!
+                            </div>
+                            <div id="green-play-btn">
+                                <img id="grn-btn" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer - Music player & Green bar section -->
+    <footer>
+        <!-- for mobile and tablet view - footer-->
+        <div id="mobile-footer" class="d-flex justify-content-around">
+            <div id="home-icon-footer" class="mob-foot">
+                <img src="./Test folder/Icons and logo/Sidebar/home.svg" alt="">
+                <div><a href="./index.html">Home</a></div>
+            </div>
+            <div class="mob-foot">
+                <img src="./Test folder/Icons and logo/Sidebar/search.svg" alt="">
+                <div>Search</div>
+            </div>
+            <div class="mob-foot">
+                <img src="./Test folder/Icons and logo/Sidebar/your_library.svg" alt="">
+                <div><a href="./playlist.html">Your Library</a></div>
+            </div>
+            <div class="mob-foot">
+                <img id="getapp-img" src="./Test folder/Icons and logo/Sidebar/getapp.png" alt="">
+                <div>Get App</div>
+            </div>
+        </div>
+        <!-- Music player -->
+        <section class="music-section pt-1 d-flex justify-content-between fw-bold">
+            <!-- song detail -->
+            <div id="song-det" class="d-flex justify-content-center align-items-center ">
+                <div class="song-detail d-flex align-items-center">
+                    <div class="px-2">
+                        <img src="./Test folder/Icons and logo/Footer/song_image.svg" alt="Song Image">
+                    </div>
+                    <div class="lh-sm px-2">
+                        <div id="song-name">Dreaming On</div>
+                        <div id="song-artist">NEFFEX</div>
+                    </div>
+                    <div id="green-heart" class="px-2">
+                        <img src="./Test folder/Icons and logo/Footer/green_heart.svg" alt="Green Heart">
+                    </div>
+                </div>
+            </div>
+            <!-- song controls -->
+            <div id="song-seeker" class="song-controls d-flex flex-column align-items-center">
+                <div class="song-controls-buttons d-flex justify-content-between ">
+                    <img class="mus-btn" src="./Test folder/Icons and logo/Footer/shuffle_icon.svg" alt="shuffle_icon">
+                    <img class="mus-btn" src="./Test folder/Icons and logo/Footer/skip_previous.svg" alt="skip_previous">
+                    <img src="./Test folder/Icons and logo/Footer/play_icon.svg" alt="play_icon">
+                    <img class="mus-btn" src="./Test folder/Icons and logo/Footer/skip-next.svg" alt="skip-next">
+                    <img class="mus-btn" src="./Test folder/Icons and logo/Footer/repeat_icon.svg" alt="repeat_icon">
+                </div>
+                <div class="song-controls-seeker d-flex justify-content-center align-items-center">
+                    <span class="seeker-time px-2">0:00</span>
+                    <input type="range" class="timeline-slider" min="0" max="100" step="1" value="0" />
+                    <span class="seeker-time px-2">0:00</span>
+                </div>
+            </div>
+            <!-- music adjust -->
+            <div id="music-seeker" class="music-adjust d-flex justify-content-around align-items-center">
+                <img class="mus-btn" src="./Test folder/Icons and logo/Footer/microphone_icon.svg" alt="microphone_icon">
+                <img class="mus-btn" src="./Test folder/Icons and logo/Footer/list_queue.svg" alt="list_queue">
+                <img src="./Test folder/Icons and logo/Footer/laptop_icon.svg" alt="laptop_icon">
+                <img class="mus-btn" src="./Test folder/Icons and logo/Footer/speaker_icon.svg" alt="speaker_icon">
+                <input type="range" class="volume-slider" min="0" max="100" step="1" value="50" />
+                <img class="mus-btn" src="./Test folder/Icons and logo/Footer/expand.svg" alt="speaker_cancel">
+            </div>
+        </section>
+        <div id="vector-icon">
+            <img src="./Test folder/Icons and logo/Footer/Up-arrow_Vector .svg" alt="vector icon">
+        </div>
+
+        <!-- for mobile - song play tab - bottom -->
+        <div id="song-footer" class="d-flex justify-content-between align-items-center">
+            <div id="song-foot-1" class="d-flex align-items-center">
+                <div class="px-2">
+                    <img src="./Test folder/Icons and logo/Playlist/playlist_song_icon1.svg" alt="Song Image">
+                </div>
+                <div class="lh-sm px-2">
+                    <div id="song-name">Hold On</div>
+                    <div id="song-artist">Justin Beiber</div>
+                </div>
+            </div>
+            <div id="song-foot-2" class="d-flex justify-content-around align-items-center">
+                <div>
+                    <i id="sng-ft-1" class="fa-regular fa-heart fa-2xl" style="color: #ffffff;"></i>
+                </div>
+                <div>
+                    <i id="sng-ft-2" class="fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Green bar section -->
+        <section id="green-footer" class="green-bar fw-bold">
+            <div class="d-flex justify-content-end">
+                <img src="./Test folder/Icons and logo/Footer/greenbar_speaker.svg" alt="speaker_icon">
+                <span class="green-bar-text ms-1 me-5">Listening on ASUS-ROG-G531GT</span>
+            </div>
+        </section>
+    </footer>
+
+    <!-- JS Separate Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

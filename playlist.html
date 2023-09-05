@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist | Spotify</title>
+    <link rel="icon" href="./Test folder/Icons and logo/spotify_icon.png">
+    <link rel="stylesheet" href="./playlist-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- sidebar section -->
+    <header class="d-flex flex-column justify-content-between">
+        <!-- top section - logo, home, search, Your library -->
+        <!-- should have postition:fixed; z-index: high too -->
+        <section class="sidebar">
+            <div class="spotify-logo-div py-2 px-3">
+                <img class="spotify-logo" src="./Test folder/Icons and logo/Spotify logo.svg" alt="spotify-logo">
+            </div>
+            <div class="sidebar-header my-2">
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons" src="./Test folder/Icons and logo/Sidebar/home.svg"
+                            alt="Home icon"></div>
+                    <span><a href="./index.html">Home</a></span>
+                </div>
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons"
+                            src="./Test folder/Icons and logo/Sidebar/search.svg" alt="Search icon"></div>
+                    <span>Search</span>
+                </div>
+                <div id="library-icon" class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons"
+                            src="./Test folder/Icons and logo/Sidebar/your_library.svg" alt="Library icon"></div>
+                    <span>Your Library</span>
+                </div>
+            </div>
+            <div id="playlists-heading" class="px-3">PLAYLISTS</div>
+            <!-- contains - create playlist, liked songs, your episodes-->
+            <div class="sidebar-sub-header my-3">
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2">
+                        <div class="d-inline-block">
+                            <div id="plus-icon"><img class="sidebar-icons"
+                                    src="./Test folder/Icons and logo/Sidebar/create_playlist.svg" alt="Single plus icon"></div>
+                        </div>
+                    </div>
+                    <span>Create Playlist</span>
+                </div>
+                <div class="sidebar-tags px-3">
+                    <div class="d-inline-block py-2"><img class="sidebar-icons"
+                            src="./Test folder/Icons and logo/Sidebar/liked_songs.svg" alt="Purple heart icon"></div>
+                    <span>Liked Songs</span>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <div id="album-photo" class="d-flex justify-content-center align-items-center">
+            <img class="album-photo-img" src="./Test folder/Images/playlist-album-cover.svg" alt="playlist-album-cover">
+        </div>
+    </header>
+
+    <!-- main body part -->
+    <main>
+        <!-- Hero section -->
+        <section id="playlist-details" class="d-flex align-items-end">
+            <!-- Playlist Image -->
+            <div class="playlist-image">
+                <img class="image" src="./Test folder/Icons and logo/playlist-img.png" alt="Playlist-image">
+            </div>
+            <!-- Playlist text details -->
+            <div class="playlist-descriptions">
+                <div id="playlist-tag">PLAYLIST</div>
+                <div id="playlist-name-tag">Pop Right Now</div>
+                <div id="playlist-description-tag">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus
+                </div>
+                <div id="playlist-likes-and-duration"><span id="descp-spotify">Spotify</span> &#8226; 860,305 likes
+                    &#8226; 100 songs, 5 hr 5 min</div>
+            </div>
+        </section>
+
+        <!-- Play, like button section -->
+        <section id="play-section" class="d-flex align-items-center px-4">
+            <div class="play-section-icons">
+                <img class="icon-1" src="./Test folder/Icons and logo/Playlist/green_play_button.svg" alt="Play button">
+            </div>
+            <div class="play-section-icons">
+                <img class="icon-2" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="Grey Heart">
+            </div>
+            <div class="play-section-icons">
+                <img class="icon-3" src="./Test folder/Icons and logo/Playlist/three_dot_big.svg" alt="Menu">
+            </div>
+        </section>
+        <!-- Tracks section -->
+        <section id="track-heading" class="py-3 px-4">
+            <div class="track-head">
+                <div class="hr-line"></div>
+                <div id="track-head-hr" class="d-flex justify-content-between">
+                    <div class="track-col-1 tr-head"># TITLE</div>
+                    <div class="track-col-2 tr-head">ALBUM</div>
+                    <div class="track-col-3 tr-head">DATE ADDED</div>
+                    <div class="track-col-4 tr-head">TIME</div>
+                </div>
+            </div>
+        </section>
+        <section class="tracks px-4">
+            <!-- song 1 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">1</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" src="./Test folder/Icons and logo/Footer/song_image.svg" alt="">
+                    <div class="trackname">
+                        <div class="song-name">We're Good</div>
+                        <div>Dua Lipa</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Future Nostalgia (The Moonlight Edition)
+                </div>
+                <div class="track-col-3">
+                    22 June 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:45</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 2 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">2</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851da6f73a25f4c79d0e6b4a8bd" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Bad Liar</div>
+                        <div class="singer">Imagine Dragons</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Pop Mix
+                </div>
+                <div class="track-col-3">
+                    28 Jun 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>4:20</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 3 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">3</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d0000485118b8088fe0c3dbf78398b55a" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Stereo Hearts (feat. Adam Levine)</div>
+                        <div>Gym Class Heroes, Adam Levine</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English Top 2022-2023
+                </div>
+                <div class="track-col-3">
+                    06 July 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:30</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 4 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">4</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851806c160566580d6335d1f16c" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Moonlight</div>
+                        <div>XXXTENTACION</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Best of English Pop
+                </div>
+                <div class="track-col-3">
+                    29 Jul 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:45</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 5 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">5</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851df7cddc2d32ef9df762d5a30" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Don't Let Me Down</div>
+                        <div>The Chainsmokers, Daya</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English Pop Hits!
+                </div>
+                <div class="track-col-3">
+                    25 Aug 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:28</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 6 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">6</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Heat Waves</div>
+                        <div>Glass Animals</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English pop songs(2000-2022)
+                </div>
+                <div class="track-col-3">
+                    25 Aug 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:59</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 7 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">7</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851569f64493ca55cd96fdee412" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">FRIENDS</div>
+                        <div>Marshmello, Anne-Marie</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Best of Marshmello Pop
+                </div>
+                <div class="track-col-3">
+                    28 Sep 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:22</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 8 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">8</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851fa0ab3a28b5c52d8a5f97045" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Beggin'</div>
+                        <div>Måneskin</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English Top Hits 2022-2023
+                </div>
+                <div class="track-col-3">
+                    18 Nov 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:31</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 9 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">9</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d0000485149e0134c686547c28b7c999f" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Unstoppable</div>
+                        <div>Sia</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English Top Hits 2022-2023
+                </div>
+                <div class="track-col-3">
+                    18 Nov 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:37</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 10 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">10</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851153261ff7373a171c24ab9f9" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Alone, Pt. II</div>
+                        <div>Alan Walker, Ava Max</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English pop songs(2000-2022)
+                </div>
+                <div class="track-col-3">
+                    04 Dec 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:45</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 11 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">11</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d0000485186a8ab515de4b7aef28cd631" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Memories</div>
+                        <div>Maroon 5</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Pop Mix
+                </div>
+                <div class="track-col-3">
+                    04 Dec 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:09</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 12 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">12</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851da6f73a25f4c79d0e6b4a8bd" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Bad Liar</div>
+                        <div>Imagine Dragons</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Pop Mix
+                </div>
+                <div class="track-col-3">
+                    04 Dec 2022
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>4:20</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 13 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">13</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851a108e07c661f9fc54de9c43a" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Faded</div>
+                        <div>Alan Walker</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Best of English Pop
+                </div>
+                <div class="track-col-3">
+                    06 Feb 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:52</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 14 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">14</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851806c160566580d6335d1f16c" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Moonlight</div>
+                        <div>XXXTENTACION</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Best of English Pop
+                </div>
+                <div class="track-col-3">
+                    06 Feb 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:45</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 15-->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">15</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" src="./Test folder/Icons and logo/Footer/song_image.svg" alt="">
+                    <div class="trackname">
+                        <div class="song-name">We're Good</div>
+                        <div>Dua Lipa</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Future Nostalgia (The Moonlight Edition)
+                </div>
+                <div class="track-col-3">
+                    15 Mar 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:45</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 16 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">16</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851df7cddc2d32ef9df762d5a30" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Don't Let Me Down</div>
+                        <div>The Chainsmokers, Daya</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English Pop Hits!
+                </div>
+                <div class="track-col-3">
+                    25 May 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:28</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 17 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">17</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851712701c5e263efc8726b1464" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Heat Waves</div>
+                        <div>Glass Animals</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English pop songs(2000-2022)
+                </div>
+                <div class="track-col-3">
+                    15 June 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:59</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 18 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">18</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851569f64493ca55cd96fdee412" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">FRIENDS</div>
+                        <div>Marshmello, Anne-Marie</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Best of Marshmello Pop
+                </div>
+                <div class="track-col-3">
+                    19 June 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:22</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 19 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">19</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851153261ff7373a171c24ab9f9" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Alone, Pt. II</div>
+                        <div>Alan Walker, Ava Max</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English pop songs(2000-2022)
+                </div>
+                <div class="track-col-3">
+                    12 Aug 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:45</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 20 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">20</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d0000485186a8ab515de4b7aef28cd631" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Memories</div>
+                        <div>Maroon 5</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Pop Mix
+                </div>
+                <div class="track-col-3">
+                    14 Aug 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:09</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 21 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">21</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851da6f73a25f4c79d0e6b4a8bd" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Bad Liar</div>
+                        <div>Imagine Dragons</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    Pop Mix
+                </div>
+                <div class="track-col-3">
+                    14 Aug 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>4:20</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 22 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">22</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d00004851fa0ab3a28b5c52d8a5f97045" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Beggin'</div>
+                        <div>Måneskin</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English Top Hits 2022-2023
+                </div>
+                <div class="track-col-3">
+                    18 Aug 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>3:31</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+            <!-- song 23 -->
+            <div class="track-item d-flex">
+                <div id="a123" class="track-col-1 d-flex align-items-center">
+                    <div>
+                        <div class="s-no">23</div>
+                        <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/white_play_button.svg"
+                            alt="">
+                    </div>
+                    <img class="image-1" alt="" src="https://i.scdn.co/image/ab67616d0000485149e0134c686547c28b7c999f" class="Image-sc-1u215sg-3 LeZdL ListRowImage__ListRowImageComponent-sc-1uaxq9n-0 ctMhZp" data-encore-id="image">
+                    <div class="trackname">
+                        <div class="song-name">Unstoppable</div>
+                        <div>Sia</div>
+                    </div>
+                </div>
+                <div class="track-col-2">
+                    English Top Hits 2022-2023
+                </div>
+                <div class="track-col-3">
+                    25 Aug 2023
+                </div>
+                <div class="track-col-4">
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="">
+                    <span>2:37</span>
+                    <img class="hover-appear" src="./Test folder/Icons and logo/Playlist/three_dot_small.svg" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <!-- Music player -->
+        <section class="music-section px-2 py-2 d-flex justify-content-between">
+            <!-- for mobile and tablet view - footer-->
+            <div id="mobile-footer" class="d-flex justify-content-around">
+                <div class="mob-foot">
+                    <img src="./Test folder/Icons and logo/Sidebar/home.svg" alt="">
+                    <div><a href="./index.html">Home</a></div>
+                </div>
+                <div class="mob-foot">
+                    <img src="./Test folder/Icons and logo/Sidebar/search.svg" alt="">
+                    <div>Search</div>
+                </div>
+                <div id="library-icon-footer" class="mob-foot">
+                    <img src="./Test folder/Icons and logo/Sidebar/your_library.svg" alt="">
+                    <div>Your Library</div>
+                </div>
+                <div class="mob-foot">
+                    <img id="getapp-img" src="./Test folder/Icons and logo/Sidebar/getapp.png" alt="">
+                    <div>Get App</div>
+                </div>
+            </div>
+            <!-- song detail -->
+            <div id="song-det" class="d-flex justify-content-center align-items-center">
+                <div class="song-detail d-flex justify-content-between align-items-center">
+                    <div class="px-2">
+                        <img src="./Test folder/Icons and logo/Playlist/playlist_song_icon1.svg" alt="Song Image">
+                    </div>
+                    <div class="lh-sm px-2">
+                        <div id="song-name">Hold On</div>
+                        <div id="song-artist">Justin Beiber</div>
+                    </div>
+                    <div id="mus-grey-heart" class="px-2">
+                        <img class="mus-btn" src="./Test folder/Icons and logo/Playlist/grey_heart.svg" alt="Grey Heart">
+                    </div>
+                    <div id="mus-pip" class="px-2">
+                        <img class="mus-btn" src="./Test folder/Icons and logo/Playlist/pip.svg" alt="Picture-in-Picture">
+                    </div>
+                </div>
+            </div>
+            <!-- song controls -->
+            <div id="song-seeker" class="song-controls d-flex flex-column align-items-center">
+                <div class="song-controls-buttons d-flex justify-content-between align-items-center ">
+                    <img class="mus-btn" src="./Test folder/Icons and logo/Footer/shuffle_icon.svg" alt="shuffle_icon">
+                    <img class="mus-btn" src="./Test folder/Icons and logo/Footer/skip_previous.svg" alt="skip_previous">
+                    <img src="./Test folder/Icons and logo/Footer/play_icon.svg" alt="play_icon">
+                    <img class="mus-btn" src="./Test folder/Icons and logo/Footer/skip-next.svg" alt="skip-next">
+                    <img class="mus-btn" src="./Test folder/Icons and logo/Footer/repeat_icon.svg" alt="repeat_icon">
+                </div>
+                <div class="song-controls-seeker d-flex justify-content-center align-items-center">
+                    <span class="seeker-time px-2">0:00</span>
+                    <input type="range" class="timeline-slider" min="0" max="100" step="1" value="0" />
+                    <span class="seeker-time px-2">0:00</span>
+                </div>
+            </div>
+            <!-- music adjust -->
+            <div id="music-seeker" class="music-adjust d-flex justify-content-around align-items-center">
+                <img class="mus-btn" src="./Test folder/Icons and logo/Playlist/queue_playlist.svg" alt="list_queue">
+                <img id="mus-2" class="mus-btn" src="./Test folder/Icons and logo/Playlist/connect_speaker.svg" alt="Connect Speaker">
+                <img class="mus-btn" src="./Test folder/Icons and logo/Playlist/speaker_playlist.svg" alt="Speaker">
+                <input type="range" class="volume-slider" min="0" max="100" step="1" value="50" />
+            </div>
+            <!-- for mobile - song play tab - bottom -->
+            <div id="song-footer" class="d-flex justify-content-between align-items-center">
+                <div id="song-foot-1" class="d-flex align-items-center">
+                    <div class="px-2">
+                        <img src="./Test folder/Icons and logo/Playlist/playlist_song_icon1.svg" alt="Song Image">
+                    </div>
+                    <div class="lh-sm px-2">
+                        <div id="song-name">Hold On</div>
+                        <div id="song-artist">Justin Beiber</div>
+                    </div>
+                </div>
+                <div id="song-foot-2" class="d-flex justify-content-around align-items-center">
+                    <div>
+                        <i id="sng-ft-1" class="fa-regular fa-heart fa-2xl" style="color: #ffffff;"></i>
+                    </div>
+                    <div>
+                        <i id="sng-ft-2" class="fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <!-- JS Separate Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
